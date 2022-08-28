@@ -49,30 +49,9 @@ class GameWord:
                 y = i[0]
                 newMot.append(y)
             return newMot
-
-    def updateData(self):
-        db = self.connectToDatabase()
-        with db:
-            newname = "updatedword"
-            user_id = 1
-
-            cur = db.cursor()
-            cur.execute('UPDATE words SET name = ? WHERE id = ?', (newname, user_id))
-            db.commit()
-            print("Data Updated Successfully")
-
-    def deleteData(self):
-        db = self.connectToDatabase()
-        with db:
-            user_id = 1
-            cur = db.cursor()
-            cur.execute('DELETE FROM words WHERE id = ?  ', (user_id,) )
-            db.commit()
-            print("Data Deleted Successfully")
 """
 game = GameWord()
 game.connectToDatabase()
 game.createTable()
 game.insertData()
-print(game.getData())
 """

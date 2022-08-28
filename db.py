@@ -5,7 +5,7 @@ class GameWord:
         self.__auth = "Kevin Thierry"
 
     def connectToDatabase(self):
-        return lit.connect('wordGame.db')
+        return lit.connect('game.db')
 
     def createTable(self):
         try:
@@ -21,10 +21,31 @@ class GameWord:
 
     def insertData(self):
         mot = (
-            (1, 'CACHALOT'),
-            (2, 'ORQUE'),
-            (3, 'MOINEAU'),
-            (4, 'LIONCEAU'),
+            (1, 'VACHE'),
+            (2, 'LAPIN'),
+            (3, 'BREBIS'),
+            (4, 'ANE'),
+            (5, 'CANARD'),
+            (6, 'CANE'),
+            (7, 'BOEUF'),
+            (8, 'COQ'),
+            (9, 'POULE'),
+            (10, 'POUSSIN'),
+            (11, 'ANESSE'),
+            (12, 'BAUDET'),
+            (13, 'CHEVAL'),
+            (14, 'JUMENT'),
+            (15, 'CHEVRE'),
+            (16, 'BOUC'),
+            (17, 'COCHON'),
+            (18, 'VERRAT'),
+            (19, 'TRUIE'),
+            (20, 'DINDON'),
+            (21, 'DINDE'),
+            (22, 'LAPINE'),
+            (23, 'MOUTON'),
+            (24, 'BELIER'),
+            (25, 'TAREAU')
          )
         db = self.connectToDatabase()
         with db:
@@ -49,9 +70,11 @@ class GameWord:
                 y = i[0]
                 newMot.append(y)
             return newMot
+
 """
 game = GameWord()
 game.connectToDatabase()
 game.createTable()
 game.insertData()
+print(game.getData())
 """
